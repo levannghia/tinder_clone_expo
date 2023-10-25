@@ -3,11 +3,12 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { HomeScreen, ChatScreen, LoginScreen } from '../screens';
 import { AuthProvider } from '../hook/useAuth';
+import useAuth from "../hook/useAuth"
 
 const Stack = createNativeStackNavigator();
 
 const StackNavigation = () => {
-    const user = true
+    const user = useAuth()
     return (
         <NavigationContainer>
             <AuthProvider>
